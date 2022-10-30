@@ -130,7 +130,7 @@ if ($_POST) {
                 <div class="form-group col-md-12">
                   <label>Contraseña</label>
                   <input type="password" id="password" name="password" class="form-control" placeholder="contraseña" required="">
-                  <p style="color: black; margin-top: 15px; text-align: center;">No tienes una cuenta? <a href="register.php">Regístrate</a></p>
+                  <p style="color: black; margin-top: 15px; text-align: center;">¿No tienes una cuenta? <a href="register.php">Regístrate</a></p>
                 </div>
                
 
