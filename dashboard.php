@@ -45,10 +45,10 @@ $date = date('Y-m-d');
                             <thead>
                                 <tr>
                                     
-                                    <th>ULTIMO PERIODO </th>
-                                    <th>DURACION PROMEDIO PERIODO	</th>
-                                    <th>DURACION PROMEDIO CICLO	</th>
-                                    <th>ACCION</th>
+                                    <th>ÚLTIMO PERIODO </th>
+                                    <th>DURACIÓN PROMEDIO PERIODO	</th>
+                                    <th>DURACIÓN PROMEDIO CICLO	</th>
+                                    <th>ACCIÓN</th>
 
                                 </tr>
                             </thead>
