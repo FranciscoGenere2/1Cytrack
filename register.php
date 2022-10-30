@@ -59,7 +59,7 @@ if ($_POST) {
           <div class="popup__background"></div>
           <div class="popup__content">
             <h3 class="popup__content__title">
-              Bienvenido!
+              ¡Bienvenido!
               </h1>
               <p>Registro Exitoso</p>
               <p>
@@ -115,7 +115,7 @@ if ($_POST) {
 <div id="main-wrapper">
   <div class="unix-login" >
 
-    <div  class="container-fluid" style="margin-top: -10%; background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/F4A9/production/_108733626_periodcalendar.gif');
+    <div  class="container-fluid" style="margin-top: -10%; background-image: url('assets/img/Cytrack-background-alt.png');
  background-color: #ffffff;background-size:cover;">
                
 
