@@ -96,7 +96,7 @@ $date = date('Y-m-d');
         </div>
         <div class="row">
             <div class="col-md-6 dashboard">
-                <div class="card" style="background: #eb8038 ">
+                <div class="card" style="background: #2B958A ">
                     <div class="media widget-ten">
                         <div class="media-left meida media-middle">
                             <span><i class="ti-support"></i></span>
@@ -134,7 +134,7 @@ $date = date('Y-m-d');
             </div>
             <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 'x') /*OJO*/  { ?> 
                 <div class="col-md-6 dashboard">
-                    <div class="card" style="    background-color: #f05746 ">
+                    <div class="card" style="    background-color: #F392BC ">
                         <div class="media widget-ten">
                             <div class="media-left meida media-middle">
                                 <span><i class="bi-droplet"></i></span>
@@ -160,7 +160,7 @@ $date = date('Y-m-d');
             <?php } ?>
             <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 'x') { ?>
                 <div class="col-md-6 dashboard">
-                    <div class="card " style="    background-color: #3ec294 ">
+                    <div class="card " style="    background-color: #F392BC ">
                         <div class="media widget-ten">
                             <div class="media-left meida media-middle">
                                 <span><i class="ti-notepad"></i></span>
@@ -201,7 +201,7 @@ $date = date('Y-m-d');
 
             <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 'x') { ?>
                 <div class="col-md-6 dashboard">
-                    <div class="card" style="background:#65c8db ">
+                    <div class="card" style="background:#2B958A ">
                         <div class="media widget-ten">
                             <div class="media-left meida media-middle">
                                 <span><i class="fa fa-dot-circle-o"></i></span>
