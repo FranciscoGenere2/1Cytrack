@@ -80,7 +80,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
 
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-3 control-label">Telefono</label>
+                                        <label class="col-sm-3 control-label">Teléfono</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="utelefono" id="utelefono" class="form-control" placeholder="Telefono">
                                         </div>
