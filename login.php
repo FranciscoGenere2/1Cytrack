@@ -114,13 +114,13 @@ if ($_POST) {
 <div id="main-wrapper">
   <div class="unix-login">
 
-    <div class="container-fluid" style="height: 100%; background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/F4A9/production/_108733626_periodcalendar.gif');
+    <div class="container-fluid" style="height: 100%; background-image: url('assets/img/Cytrack-background.png');
  background-color: #ffffff;background-size:cover">
       <div class="row ">
         <div class="col-md-4">
           <div class="login-content ">
             <div class="login-form">
-              <center><img src="./assets/uploadImage/Logo/logo1.png" style="width: 100px;"></center><br>
+              <center><img src="./assets/uploadImage/Logo/CyTrack.png" style="width: 100px;"></center><br>
               <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="loginForm" class="row">
                 <div class="form-group col-md-12">
                   <label lass="col-sm-3 control-label">Correo</label>
