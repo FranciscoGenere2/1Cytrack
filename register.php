@@ -123,7 +123,7 @@ if ($_POST) {
         <div class="col-md-4">
           <div class="login-content"  >
             <div class="login-form"  ><br><br><br><br><br>
-            <center><img src="./assets/uploadImage/Logo/logo1.png" style="width: 100px; margin-top: -20%;"></center><br><br><br><br>
+            <center><img src="assets/uploadImage/Logo/CyTrack.png" style="width: 100px; margin-top: -20%;"></center><br><br><br><br>
               <div style="position: static; "> <!--SOLUCIONAR DESPUES -->
               
               <form action="php_action/createUser.php" method="post" id="loginForm" class="row">
