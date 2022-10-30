@@ -59,7 +59,7 @@ if ($_POST) {
           <div class="popup__background"></div>
           <div class="popup__content">
             <h3 class="popup__content__title">
-              Bienvenido!
+              ¡Bienvenido!
               </h1>
               <p>Registro Exitoso</p>
               <p>
@@ -115,7 +115,7 @@ if ($_POST) {
 <div id="main-wrapper">
   <div class="unix-login" >
 
-    <div  class="container-fluid" style="margin-top: -10%; background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/F4A9/production/_108733626_periodcalendar.gif');
+    <div  class="container-fluid" style="margin-top: -10%; background-image: url('assets/img/Cytrack-background-alt.png');
  background-color: #ffffff;background-size:cover;">
                
 
@@ -157,7 +157,7 @@ if ($_POST) {
                 <div class="form-group col-md-12">
                   <label>Contraseña</label>
                   <input type="password" id="password" name="password" class="form-control" placeholder="contraseña" required="">
-                  <p style="color: black; margin-top: 15px; text-align: center;">Ya tienes una cuenta? <a href="login.php">Inicia Sesion</a></p>
+                  <p style="color: black; margin-top: 15px; text-align: center;">¿Ya tienes una cuenta? <a href="login.php">Inicia Sesión</a></p>
                 </div>
                
 
