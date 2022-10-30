@@ -114,7 +114,7 @@ if ($_POST) {
 <div id="main-wrapper">
   <div class="unix-login">
 
-    <div class="container-fluid" style="height: 100%; background-image: url('https://ichef.bbci.co.uk/news/976/cpsprodpb/F4A9/production/_108733626_periodcalendar.gif');
+    <div class="container-fluid" style="height: 100%; background-image: url('assets/img/Cytrack-background.png');
  background-color: #ffffff;background-size:cover">
       <div class="row ">
         <div class="col-md-4">
