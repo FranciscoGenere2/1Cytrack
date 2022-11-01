@@ -58,10 +58,10 @@ $date = date('Y-m-d');
                                $variable = $_GET['id'];
                                 $sql = "SELECT * FROM users WHERE id = $variable";
                                 $result1 = $connect->query($sql);
-                                foreach ($result1 as $row1) {
+                               /* foreach ($result1 as $row1) {
                                     $usuario = $result1['user_id'];
                                 
-                            }
+                            }*/
                                 ?>
                                 <?php
                                 //echo $sql;exit;
