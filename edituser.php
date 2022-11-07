@@ -49,11 +49,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Nombre</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="editusername" id="editusername" class="form-control" placeholder="<?php
+                                            <input type="text" name="editusername" id="editusername" class="form-control" value="<?php
                                             
                                             echo $result['username'];
                                                 ?>
-                                            " required="" value="">
+                                            " required="">
                                         </div>
                                     </div>
                                 </div>
@@ -61,11 +61,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Apellido</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="editapellido" id="editapellido" class="form-control" placeholder="<?php
+                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="<?php
                                             
                                             echo $result['apellido'];
                                                 ?>
-                                            " required="" value="">
+                                            " required="" >
                                         </div>
                                     </div>
                                 </div>
@@ -87,11 +87,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="editemail" id="editemail" class="form-control" placeholder="<?php
+                                            <input type="email" name="editemail" id="editemail" class="form-control" value="<?php
                                             
                                             echo $result['email'];
                                                 ?>
-                                            " required="" value="">
+                                            " required="" >
                                         </div>
                                     </div>
                                 </div>
@@ -100,11 +100,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Telefono</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="edittelefono" id="edittelefono" class="form-control" placeholder="<?php
+                                            <input type="text" name="edittelefono" id="edittelefono" class="form-control" value="<?php
                                             
                                             echo $result['telefono'];
                                                 ?>
-                                            " required="" value="">
+                                            " required="" >
                                         </div>
                                     </div>
                                 </div>
