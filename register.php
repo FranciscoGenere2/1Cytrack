@@ -141,7 +141,7 @@ if ($_POST) {
 
                 <div class="form-group col-md-12">
                   <label lass="col-sm-3 control-label">Fecha de nacimiento</label>
-                  <input type="date" name="nacimientodouser" id="nacimientodouser" class="form-control" placeholder="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Apellido no permitido" required="">
+                  <input type="date" name="nacimientodouser" id="nacimientodouser" min='1900-01-01' max='2013-01-01' class="form-control" placeholder="" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Apellido no permitido" required="">
                   
                 </div>
                 <div class="form-group col-md-12">
