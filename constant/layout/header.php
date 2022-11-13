@@ -40,7 +40,7 @@ require_once('./constant/connect.php');
                 <a class="navbar-brand" href="dashboard.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId'];?>">
 
 
-                    <b><img src="./assets/uploadImage/Logo/logo1.png" style="width: 30%;" alt="homepage" class="dark-logo" style="width:100%;height:auto;" /></b>
+                    <b><img src="assets/uploadImage/Logo/CyTrack.png" style="width: 30%;" alt="homepage" class="dark-logo" style="width:100%;height:auto;" /></b>
                     
                   
                     <b> <a href="./constant/logout.php"> <img src="assets\uploadImage\Logo\logout.png" alt="Usuario" style="width:30px;height:auto;position:absolute;margin-top:1%;margin-left:80%" /></b>
