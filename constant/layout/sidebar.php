@@ -22,6 +22,23 @@ $rol=$_GET['rol'];
                  <li> <a href="#?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-wrench"></i> Ajustes</a>
                  <li> <a href="#?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-pencil"></i> Notas</a>
 
+                 <p><div id="donate-button-container">
+                    <div id="donate-button"></div>
+                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                    <script>
+                    PayPal.Donation.Button({
+                    env:'production',
+                    hosted_button_id:'SA45J4LRQ3GRG',
+                    image: {
+                    src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                    alt:'Dona con PayPal',
+                    title:'PayPal - ¡Dona a Cytrack!',
+                    }
+                    }).render('#donate-button');
+                    </script>
+                    </div>
+                </p>
+
 
 
                  <!-- <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 2) { ?>

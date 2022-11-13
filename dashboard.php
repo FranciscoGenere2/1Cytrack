@@ -30,22 +30,7 @@ $date = date('Y-m-d');
 
     
 <head>
-<p><div id="donate-button-container">
-<div id="donate-button"></div>
-<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-<script>
-PayPal.Donation.Button({
-env:'production',
-hosted_button_id:'SA45J4LRQ3GRG',
-image: {
-src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-alt:'Donate with PayPal button',
-title:'PayPal - The safer, easier way to pay online!',
-}
-}).render('#donate-button');
-</script>
-</div>
-</p>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href='https://css.gg/drop.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
