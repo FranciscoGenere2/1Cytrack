@@ -3,7 +3,7 @@
 
 <?php include('./constant/layout/sidebar.php'); ?>
 
-<?php include('./constant/connect');
+<?php include('./constant/connect.php');
 //AQUI HAGO CONSULTA DE LA LISTA DE USUARIOS QUE SE MOSTRARAN EN LA PANTALLA DE USUARIOS
 $sql = "SELECT * FROM users";
 $result = $connect->query($sql);
@@ -61,7 +61,7 @@ $result = $connect->query($sql);
                                     <td><?php echo $row['telefono']; ?></td>
                                     <?php $rol = $row['rol']; if ($rol==2){
                                         ?>
-                                        <td style="background-color: #786870; color: black;"><?php echo "Usuario"; ?></td>
+                                        <td style="background-color: #808080; color: black;"><?php echo "Usuario"; ?></td>
                                         <?php
                                         }else{?>
                                         <td style="background-color: #53c408; color: black;"><?php echo "Administrador"; ?></td><?php

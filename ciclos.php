@@ -3,8 +3,10 @@
 
 <?php include('./constant/layout/sidebar.php'); ?>
 
-<?php include('./constant/connect');
+<?php include('./constant/connect.php');
 
+$sql = "SELECT * from menstrual where  id='" . $_GET['id'] . "'"; 
+$result = $connect->query($sql)->fetch_assoc();  
 
 ?>
 <div class="page-wrapper">
@@ -30,7 +32,7 @@
         <div class="card">
             <div class="card-body">
 
-                <a href="#"><button class="btn btn-primary">Añadir Período</button></a>
+                <a href="agregarperiodo.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>"><button class="btn btn-primary" >Añadir Período</button></a>
 
     
                 <div class="table-responsive m-t-40">
@@ -39,8 +41,14 @@
 
                 <p>Valor Período</p>
                 <ul>
-                    <li>
-                      --  Duracion del período ----------------------<p style="color: red; display: inline;">\Dia</p>
+                    <li >
+                                                              <div class="col-sm-9">
+                                            <input type="date" class="form-control" id="editduracionp" value="<?php
+                                           $result = $connect->query($sql)->fetch_assoc();  
+                                            echo $result['duracionp'];
+                                                ?>
+                                            " name="editduracionp"><a></a>
+                                        </div>
                     </li>
                     <li>
                       --  Duracion del ciclo ----------------------<p style="color: red; display: inline;">\Dia</p>

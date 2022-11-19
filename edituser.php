@@ -53,7 +53,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                             
                                             echo $result['username'];
                                                 ?>
-                                            " required="">
+                                            " required="" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -61,11 +61,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Apellido</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="<?php
+                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="apellido" value="<?php
                                             
                                             echo $result['apellido'];
                                                 ?>
-                                            " required="" >
+                                            " required="">
                                         </div>
                                     </div>
                                 </div>
@@ -74,11 +74,13 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="editfechanac" id="editfechanac" class="form-control" placeholder="<?php
+                                            <input type="date" name="editfechanac" id="editfechanac" class="form-control" min='1900-01-01' max='2013-12-31' place="fecha de nacimiento "value= "<?php
                                             
                                             echo $result['fechanac'];
                                                 ?>
                                             " required="" value="">
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -128,6 +130,10 @@ $result = $connect->query($sql)->fetch_assoc();
                                     </select>
                                         </div>
                                     </div>
+
+                                    
+                                    </div>
+
                                 </div>
                                
 

@@ -31,6 +31,7 @@ $date = date('Y-m-d');
     
 <head>
 
+   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href='https://css.gg/drop.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -47,9 +48,9 @@ $date = date('Y-m-d');
                                 <tr>
                                     
                                     <th>ÚLTIMO PERIODO </th>
-                                    <th>DURACIÓN PROMEDIO PERIODO	</th>
-                                    <th>DURACIÓN PROMEDIO CICLO	</th>
-                                    <th>ACCIÓN</th>
+                                    <th>DURACIÓN PROMEDIO PERIODO   </th>
+                                    <th>DURACIÓN PROMEDIO CICLO </th>
+                                    <!--<th>ACCIÓN</th>-->
 
                                 </tr>
                             </thead>
@@ -66,7 +67,7 @@ $date = date('Y-m-d');
                                 ?>
                                 <?php
                                 //echo $sql;exit;
-                                $sql = "SELECT * FROM menstrual WHERE id = $variable";
+                                $sql = "SELECT * FROM menstrual WHERE id_usu = $variable";
                                 $result = $connect->query($sql);
                                 //print_r($result);exit;
                                 foreach ($result as $row) {
@@ -78,8 +79,8 @@ $date = date('Y-m-d');
                                         <td><?php echo $row['ultimop']; ?></td>
                                         <td><?php echo $row['duracionp']; ?></td>
                                         <td><?php echo $row['duracionciclo']; ?></td>
-<td>                              <a href="editmenst.php?rol=<?php echo $roledit;?>&id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button></a></td>
-
+        <!--    <td>                              <a href="editmenst.php?rol=<?php echo $roledit;?>&id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-xs   btn-primary"><i class="fa fa-pencil"></i></button></a></td>
+-->
                                        
 
                                     </tr>
@@ -111,7 +112,7 @@ $date = date('Y-m-d');
                             $fechacompleta =  htmlentities($row['ultimop']);
                             $fechacompleta2 = strtotime($fechacompleta);
                             $fechadia =  idate('d', $fechacompleta2);
-                            $premenstrualini = $fechadia-2;
+                            $premenstrualini = $fechadia-4;
                             $premenstrualfin = $fechadia-1;
                         
                             if ($premenstrualini<1){
@@ -149,7 +150,9 @@ $date = date('Y-m-d');
                                 $fechacompleta2 = strtotime($fechacompleta);
                                 $fechadia =  idate('d', $fechacompleta2);
                                 $diaspromedio =  htmlentities($row['duracionp']);
-                                echo 'Desde el dia', ' ', $fechadia, ' ', 'hasta el dia', ' ', ($fechadia+$diaspromedio)-1;
+
+
+                                echo 'Desde el dia', ' ', $fechadia, ' ', 'hasta el dia', ' ', ($fechadia+$diaspromedio)-1 
                                 ?>
                              </h3>
                               
@@ -239,6 +242,50 @@ $date = date('Y-m-d');
                 </div>
             <?php } ?>
 
+<!--PROXIMA MENSTRUACION INICIO -->
+<?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 'x') { ?>
+                <div style="margin:0 auto;" class="col-md-6 dashboard">
+                    <div class="card" style="background:#a832a6 ">
+                        <div class="media widget-ten">
+                            <div class="media-left meida media-middle">
+                                <span><i class="fa fa-calendar-times-o"></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+
+
+                            <a href="#">
+                                    <p class="m-b-0">Próxima menstruación</p>
+                                </a>
+
+                                <h3 class="color-white"><?php
+                                $fechacompleta =  htmlentities($row['ultimop']);
+                                $fechacompleta2 = strtotime($fechacompleta);
+                                $fechadia =  idate('d', $fechacompleta2);
+                                $diaspromedio =  htmlentities($row['duracionp']);
+                                setlocale(LC_ALL,"es_ES");
+                                $mes_anterior = date('M', strtotime('+1 month'));
+                            
+                                if (ceil(($fechadia)+30) > 30){
+                                  $nouno=(($fechadia+$diaspromedio)/$fechadia+$diaspromedio);
+                                  echo 'Proxima menstruación ', ' ', ceil(($fechadia)), ' del mes ',$mes_anterior;
+                                
+                                }
+                                else{
+                                  echo 'Desde el dia', ' ', ceil($iniovu+(($fechadia+$diaspromedio)-1+1)+2), ' ', 'hasta el dia', ' ', ceil($iniovu+(($fechadia+$diaspromedio))+1+5);
+                                
+                                }
+                                
+                                ?></h3>
+
+                               
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+<!--PROXIMA MENSTRUACION FINAL -->
 
 
 
@@ -285,4 +332,4 @@ $date = date('Y-m-d');
 </script>
 
 
-</div>  
+</div>

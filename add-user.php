@@ -64,7 +64,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="ufechanac" id="ufechanac" class="form-control" placeholder="Fecha de nacimiento">
+                                            <input type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max='2013-12-31' class="form-control" placeholder="Fecha de nacimiento">
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
 
                                 <div class="form-group">
                                     <div class="row">
-                                        <label class="col-sm-3 control-label">Teléfono</label>
+                                        <label class="col-sm-3 control-label">Telefono</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="utelefono" id="utelefono" class="form-control" placeholder="Telefono">
                                         </div>
@@ -108,7 +108,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" name="create"  class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar Usuario</button>
+                                <button type="submit" name="create"  class="btn btn-primary btn-flat m-b-30 m-t-30">Registrar usuario</button>
                             </form>
                         </div>
                     </div>
