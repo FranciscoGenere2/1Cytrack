@@ -3,7 +3,7 @@
 
 <?php include('./constant/layout/sidebar.php'); ?>
 
-<?php include('./constant/connect');
+<?php include('./constant/connect.php');
 
 ?>
 <div class="page-wrapper">

@@ -3,7 +3,7 @@
 
 <?php include('./constant/layout/sidebar.php'); ?>
 
-<?php include('./constant/connect');
+<?php include('./constant/connect.php');
 
 ?>
 <div class="page-wrapper">
@@ -26,10 +26,10 @@
 
 
 
-        <div class="card">
+        <div class="card">  
             <div class="card-body">
 
-                <a href="#"><button class="btn btn-primary">Añadir nota</button></a>
+                <a href="notas.php"><button class="btn btn-primary">Añadir nota</button></a>
 
     
                 <div class="table-responsive m-t-40">
@@ -46,7 +46,7 @@
 	<div class="header">
 		<a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
 		<div class="text" data-render="month-year"></div>
-		<a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
+		<a data-action="next-month" data="" href="javascript:void(0)" title="Next Month"><i></i></a>
 	</div>
 	<div class="months" data-flow="left">
 		<div class="month month-a">

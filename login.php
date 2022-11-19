@@ -38,7 +38,7 @@ if ($_POST) {
     $result = $connect->query($sql);
 
     if ($result->num_rows == 1) {
-      $password = md5($password);
+     $password = md5($password);
       // exists
       $mainSql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
       $mainResult = $connect->query($mainSql);
@@ -54,9 +54,9 @@ if ($_POST) {
 
 
 <body>
-        <div class="popup popup--icon -success js_success-popup popup--visible">
+        <div  class="popup popup--icon -success js_success-popup popup--visible">
           <div class="popup__background"></div>
-          <div class="popup__content">
+          <div style="border-radius: 30px;" class="popup__content">
             <h3 class="popup__content__title">
               Bienvenido!
               </h1>
@@ -136,7 +136,7 @@ if ($_POST) {
 
 
                 <div class="col-md-12">
-                  <button style="background-color: #102b49; border-radius: 50px;" type="submit" name="login" class=" f-w-600 text-white btn  btn-flat m-b-30 m-t-30">Ingresar</button>
+                  <button style="background-color: #102b49; border-radius: 50px;" type="submit" name="login" class=" f-w-600 text-white btn  btn-flat m-b-30 m-t-30">Ingresar  </button>
                 </div>
               </form>
             </div>

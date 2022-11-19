@@ -39,7 +39,7 @@ $result = $connect->query($sql)->fetch_assoc();
                     <div class="card-body">
                         <div class="input-states">
                             
-                            <form class="form-horizontal" method="POST" id="submitUserForm" action="php_action/editMenst.php?id=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" id="submitUserForm" action="php_action/editMenst.php?id=<? php echo $_GET['id']; ?>" enctype="multipart/form-data">
 
                                 <input type="hidden" name="currnt_date" class="form-control">
 
@@ -47,11 +47,11 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Ultimo periodo</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="editultimop" id="editultimop" class="form-control" placeholder="<?php
+                                            <input type="date" name="editultimop" id="editultimop" class="form-control" value="<? php
                                             
                                             echo $result['ultimop'];
                                                 ?>
-                                            " required="" value="<?php echo $result['username'] ?>">
+                                            " required="" ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Duracion periodo</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="editduracionp" placeholder="<?php
+                                            <input type="text" class="form-control" id="editduracionp" value="<?php
                                            $result = $connect->query($sql)->fetch_assoc();  
                                             echo $result['duracionp'];
                                                 ?>
@@ -72,7 +72,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Duracion ciclo</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="editduracionciclo" placeholder="<?php
+                                            <input type="text" class="form-control" id="editduracionciclo" value="<?php
                                             $result = $connect->query($sql)->fetch_assoc();  
                                             echo $result['duracionciclo'];
                                                 ?>
