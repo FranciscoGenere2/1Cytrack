@@ -14,7 +14,7 @@ if($_POST) {
   $email 		= $_POST['email'];
   $rolUser 			= 2;
 
-	
+
 				$sql = "INSERT INTO users (username, apellido, fechanac, telefono, password,email,rol) 
 				VALUES ('$nombreuser', '$apellidouser' , '$nacimientodouser', '$telefono', '$password', '$email', $rolUser)";
 				//echo $sql;exit;
