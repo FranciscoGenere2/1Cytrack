@@ -4,7 +4,7 @@ $localhost = "localhost";
 $username = "root";
 $password = "";
 $dbname = "dbtrack";
-$store_url = "http://localhost/1cytrack";
+$store_url = "http://localhost/2Cytrack-master";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
 // check connection

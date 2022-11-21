@@ -6,8 +6,7 @@ $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST) {	
 
-$unombre 		= $_POST['unombre'];
-$uapellido 		= $_POST['uapellido'];
+
 $ufechanac 		= $_POST['ufechanac'];
 $uemail 		= $_POST['uemail'];
 $upassword 			= md5($_POST['upassword']);
