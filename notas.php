@@ -77,7 +77,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Tabla de datos</strong>
+                    <!-- <strong class="card-title">Tabla de datos</strong> -->
 
                     <div class="table-responsive m-t-40">
                         <table id="myTable" class="table table-bordered table-striped">

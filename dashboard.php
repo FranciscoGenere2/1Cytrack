@@ -41,7 +41,7 @@ $date = date('Y-m-d');
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Tabla de datos</strong>
-
+                    <a href="agregarperiodo.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>"><button class="btn btn-primary" >Añadir Período</button></a>
                     <div class="table-responsive m-t-40">
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
@@ -76,7 +76,7 @@ $date = date('Y-m-d');
                                 ?>
                                     <tr>
                                         
-                                        <td><?php echo $row['ultimop']; ?></td>
+                                        <td id = "datosup"><?php echo $row['ultimop']; ?></td>
                                         <td><?php echo $row['duracionp']; ?></td>
                                         <td><?php echo $row['duracionciclo']; ?></td>
         <!--    <td>                              <a href="editmenst.php?rol=<?php echo $roledit;?>&id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-xs   btn-primary"><i class="fa fa-pencil"></i></button></a></td>
@@ -258,22 +258,56 @@ $date = date('Y-m-d');
                                 </a>
 
                                 <h3 class="color-white"><?php
-                                $fechacompleta =  htmlentities($row['ultimop']);
-                                $fechacompleta2 = strtotime($fechacompleta);
-                                $fechadia =  idate('d', $fechacompleta2);
-                                $diaspromedio =  htmlentities($row['duracionp']);
-                                setlocale(LC_ALL,"es_ES");
-                                $mes_anterior = date('M', strtotime('+1 month'));
+                                if ((ceil($fechadia + 30)) > 30){
+                                    $fechareal = ($fechadia + 30)-30;
+
+                                    $mes_siguiente = date('M', strtotime('+1 month'));
+                                    if ($mes_siguiente=='Dec'){
+                                        $mes_siguiente = 'Diciembre';
+                                    }
+                                    else if ($mes_siguiente=='Oct'){
+                                        $mes_siguiente = 'Octubre';
+                                    }
+
+                                    else if ($mes_siguiente=='Sep'){
+                                        $mes_siguiente = 'Septiembre';
+                                    }
+
+                                    else if ($mes_siguiente=='Aug'){
+                                        $mes_siguiente = 'Agosto';
+                                    }
+
+                                    else if ($mes_siguiente=='Jul'){
+                                        $mes_siguiente = 'Julio';
+                                    }
+
+                                    else if ($mes_siguiente=='Jun'){
+                                        $mes_siguiente = 'Junio';
+                                    }
+
+                                    else if ($mes_siguiente=='May'){
+                                        $mes_siguiente = 'Mayo';
+                                    }
+
+                                    else if ($mes_siguiente=='Apr'){
+                                        $mes_siguiente = 'Abril';
+                                    }
+
+                                    else if ($mes_siguiente=='Feb'){
+                                        $mes_siguiente = 'Febrero';
+                                    }
+
+                                    else if ($mes_siguiente=='Jan'){
+                                        $mes_siguiente = 'Enero';
+                                    }
+                                    else if ($mes_siguiente=='Mar'){
+                                        $mes_siguiente = 'Marzo';
+                                    }
+
+                                  echo 'Dia: ', ' ', $fechadia, ' de ', $mes_siguiente;
+                                
+                                }
                             
-                                if (ceil(($fechadia)+30) > 30){
-                                  $nouno=(($fechadia+$diaspromedio)/$fechadia+$diaspromedio);
-                                  echo 'Proxima menstruación ', ' ', ceil(($fechadia)), ' del mes ',$mes_anterior;
-                                
-                                }
-                                else{
-                                  echo 'Desde el dia', ' ', ceil($iniovu+(($fechadia+$diaspromedio)-1+1)+2), ' ', 'hasta el dia', ' ', ceil($iniovu+(($fechadia+$diaspromedio))+1+5);
-                                
-                                }
                                 
                                 ?></h3>
 
