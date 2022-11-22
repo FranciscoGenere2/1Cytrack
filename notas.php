@@ -80,7 +80,40 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                     <!-- <strong class="card-title">Tabla de datos</strong> -->
 
                     <div class="table-responsive m-t-40">
-                        <table id="myTable" class="table table-bordered table-striped">
+
+
+
+
+                    <label for="myInput">Filtrar: </label>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="" title="Type in a name">
+                    <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTablex");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+
+
+
+
+
+                        <table id="myTablex" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     

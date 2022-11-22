@@ -29,7 +29,8 @@
         <div class="card">
             <div class="card-body">
                     <!-- add-brand.php en el href siguiente -->
-                <a href="#"><button class="btn btn-primary">+</button></a>
+                    <H2 style="color: black ;">Dia vs Mes</H2>
+                <!-- <a href="#"><button class="btn btn-primary">+</button></a> -->
 
     
                 <div class="table-responsive m-t-40">
@@ -102,10 +103,10 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio'],
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre'],
       datasets: [{
         label: 'Dias',
-        data: [1,4,6,4,6,8,3],
+        data: [18,15,15,15,8,2,15,15,14],
         borderWidth: 2
       }]
     },
