@@ -3,12 +3,14 @@
 <?php include('./constant/layout/head.php'); ?>
 <?php include('./constant/layout/header.php'); ?>
 
-<?php include('./constant/layout/sidebar.php'); ?>
+<?php include('./constant/layout/sidebar.php');
 
 
-
-
+require("constant/connect.php");
+?>
 <?php
+
+
 
 
 
@@ -67,6 +69,17 @@ function myFunction() {
   }
 }
 </script>
+<?php
+
+$sql = "SELECT * FROM tips ORDER BY RAND() LIMIT 1;";
+$result = $connect->query($sql);
+foreach($result as $row){
+    ?><br> 
+    <h3 style="color: black">TIP!:  <?php
+    print $row["des_tip"]."\n";}
+?></H3>
+   
+
 
 
                         <table id="myTablex" class="table table-bordered table-striped">
@@ -93,7 +106,7 @@ function myFunction() {
                                 ?>
                                 <?php
                                 //echo $sql;exit;
-                                $sql = "SELECT * FROM menstrual WHERE id_usu = $variable";
+                                $sql = "SELECT * FROM menstrual WHERE id_usu = $variable ORDER BY ultimop ASC";
                                 $result = $connect->query($sql);
                                 //print_r($result);exit;
                                 foreach ($result as $row) {
@@ -177,8 +190,18 @@ function myFunction() {
                                 $fechadia =  idate('d', $fechacompleta2);
                                 $diaspromedio =  htmlentities($row['duracionp']);
 
+                                if (ceil(($fechadia+$diaspromedio)) > 30){
+                                    $resultIniPost = 0;
+                                    
+                                    $finalovu1 = ceil($fechadia/($resultIniPost+$diaspromedio));
+                                echo 'Desde el dia', ' ', $fechadia, ' ', 'hasta el dia', ' ', ($finalovu1)-1;
+                                    }
+                                    else{
+                                    
+                                        echo 'Desde el dia', ' ', ceil((($fechadia+$diaspromedio))), ' ', 'hasta el dia', ' ', ceil((($fechadia+$diaspromedio))+($diaspromedio/$diaspromedio));
+                                      
+                                      }
 
-                                echo 'Desde el dia', ' ', $fechadia, ' ', 'hasta el dia', ' ', ($fechadia+$diaspromedio)-1 
                                 ?>
                              </h3>
                               

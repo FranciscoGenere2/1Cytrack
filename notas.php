@@ -50,7 +50,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Nota:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" size=40 width=200px height=15px name="uemail" id="uemail" class="form-control" placeholder="Escriba su nota aquí">
+                                            <input required type="text" size=40 width=200px height=15px name="uemail" id="uemail" class="form-control" placeholder="Escriba su nota aquí">
                                         </div>
                                     </div>
                                 </div>

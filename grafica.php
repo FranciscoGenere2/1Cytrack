@@ -29,7 +29,7 @@
         <div class="card">
             <div class="card-body">
                     <!-- add-brand.php en el href siguiente -->
-                    <H2 style="color: black ;">Dia vs Mes</H2>
+                    <H2 style="color: black ;">Promedio Periodo vs Promedio Ciclo</H2>
                 <!-- <a href="#"><button class="btn btn-primary">+</button></a> -->
 
     
@@ -41,7 +41,7 @@
 
 
 
-<label  id="resultadop">NOTA: Hay que pasar el array php al javascript, de momento solo captura el primer valor</label>
+<!-- <label  id="resultadop">NOTA: Hay que pasar el array php al javascript, de momento solo captura el primer valor</label> -->
 
                 <!DOCTYPE html>
 
@@ -65,30 +65,42 @@
         
         
         $id = $_GET['id'];
-        $sql = "SELECT duracionp FROM menstrual WHERE id_usu = $id";
-        $resulta = $connect->query($sql);
+
+$con = new mysqli('localhost', 'root', '', 'dbtrack');
+$qquery = $con->query("SELECT * FROM menstrual WHERE id_usu = $id");
 
 
-    while($row = mysqli_fetch_assoc($resulta)) {
-        $arreglo1= $row['duracionp'];
+foreach($qquery as $data)
+{
+    $duracionp[] = $data['duracionp'];
+    $duracionciclo[] = $data['duracionciclo'];
+    $dia[] = $data['ultimop'];
+    
 
-        
+
    
-        ?>
-<!-- 
-    AQUI TENGO UNA SALIDA DE LAS FECHAS REGISTRADAS
-<td id="arregloid"><?php print_r($arreglo1); ?></td>  -->
-<script type="text/javascript">
+    //$day = date("d", $dia);
+    // echo "EL DIA ES  -- " . date("d", $dia);
+    
+     
+    // print_r ($duracionp);
+    ?>
+
+         <!-- $sql = "SELECT ultimop FROM menstrual WHERE id_usu = $id";
+         $resulta = $connect->query($sql);
 
 
-
-//  var arreglo = document.getElementById('arregloid');
-
-
-
-
-  const ctx = document.getElementById('myChart');
-  /*
+     while($row = mysqli_fetch_assoc($resulta)) {
+         $arreglo1= $row['ultimop'];
+        
+        
+         $dt = strtotime($arreglo1);
+         $day = date("d", $dt);
+         $arreglado = explode(',', $day);
+         $format = str_split($day,2);
+         print_r($format); -->
+      
+         <!-- /*
   TIPOS DE GRAFICOS
         bar
         line
@@ -98,26 +110,55 @@
         doughnut
         bubble
   
-  */
-//   document.getElementById("resultadop").innerHTML = arreglo ;
+  */ -->
+
+  <?php
+}
+$bien = implode(',', $dia);
+
+$dt = date('d',strtotime($bien));
+
+$exp = json_encode($dt);
+echo $exp;
+?>
+
+
+
+<script>
+     const  dias = <?php echo json_encode($dia) ?>;
+    const duracion = <?php echo json_encode($duracionp) ?>;
+  const ctx = document.getElementById('myChart');
+
+
+
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo','Junio','Julio','Agosto','Septiembre'],
+      labels: dias,
       datasets: [{
-        label: 'Dias',
-        data: [18,15,15,15,8,2,15,15,14],
+        label: 'Duracion ciclo',
+        data: duracion,
         borderWidth: 2
       }]
     },
     options: {
-      
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
     }
   });
 </script>
 
+
+
+
+
+
+
 </html>
-<?php  }?>
+
 
 
 
@@ -142,3 +183,4 @@
 
 
         <?php include('./constant/layout/footer.php'); ?>
+

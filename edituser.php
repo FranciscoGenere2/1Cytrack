@@ -6,7 +6,7 @@
 
 <?php include('./constant/connect.php');
 
-//APARTIR DE AQUI HAGO LA CONSULTA DE LOS USUARIOS (solo para los placeholders)
+
 
 $sql = "SELECT * from users where  user_id='" . $_GET['idSelect'] . "'"; 
 $result = $connect->query($sql)->fetch_assoc();  
@@ -61,7 +61,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Apellido</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="apellido" value="<?php
+                                            <input required type="text" name="editapellido" id="editapellido" class="form-control"  value="<?php
                                             
                                             echo $result['apellido'];
                                                 ?>
@@ -74,7 +74,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="editfechanac" id="editfechanac" class="form-control" min='1900-01-01' max='2013-12-31' place="fecha de nacimiento "value= "<?php
+                                            <input required type="date" name="editfechanac" id="editfechanac" class="form-control" min='1900-01-01' max='2013-12-31' place="fecha de nacimiento "value= "<?php
                                             
                                             echo $result['fechanac'];
                                                 ?>
@@ -89,7 +89,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="editemail" id="editemail" class="form-control" value="<?php
+                                            <input required type="email" name="editemail" id="editemail" class="form-control" value="<?php
                                             
                                             echo $result['email'];
                                                 ?>
@@ -102,7 +102,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Telefono</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="edittelefono" id="edittelefono" class="form-control" value="<?php
+                                            <input required type="text" name="edittelefono" id="edittelefono" class="form-control" value="<?php
                                             
                                             echo $result['telefono'];
                                                 ?>
@@ -115,7 +115,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Contraseña</label>
                                         <div class="col-sm-9">
-                                            <input type="password" name="editcontraseña" id="editcontraseña" class="form-control" 
+                                            <input required type="password" name="editcontraseña" id="editcontraseña" class="form-control" 
                                              required="" placeholder="Su clave sera encriptada">
                                         </div>
                                     </div>

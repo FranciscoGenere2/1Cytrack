@@ -48,7 +48,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de periodo</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max="<?=date('Y-m-d');?>" class="form-control" placeholder="Fecha de nacimiento" required="">
+                                            <input required type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max="<?=date('Y-m-d');?>" class="form-control" placeholder="Fecha de nacimiento" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Dias de periodo</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="uemail" id="uemail" class="form-control"  required="">
+                                            <input required type="text" name="uemail" id="uemail" class="form-control"  required="">
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Dias de ciclo</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="utelefono" id="utelefono" class="form-control" required="">
+                                            <input required type="text" name="utelefono" id="utelefono" class="form-control" required="">
                                         </div>
                                     </div>
                                 </div>
