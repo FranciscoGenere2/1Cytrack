@@ -25,11 +25,14 @@
 
 
 
-
+<?php
+$id = $_GET['id'];
+$rol = $_GET['rol'];
+?>
         <div class="card">  
             <div class="card-body">
 
-                <a href="notas.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>"><button class="btn btn-primary">Añadir nota</button></a>
+                <a href="notas.php?id=<?php echo $id; ?>&rol=<?php echo $rol; ?>"><button class="btn btn-primary">Añadir nota</button></a>
 
     
                 <div class="table-responsive m-t-40">

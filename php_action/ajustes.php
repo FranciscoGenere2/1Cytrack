@@ -17,12 +17,12 @@ if($_POST) {
 
 
 
-	$sql = "UPDATE users SET username = '$username', apellido = '$apellido', fechanac = '$fechanac', telefono = '$telefono', password = '$editcontraseña', email = '$email' WHERE user_id = $elid ";
+	$sql = "UPDATE users SET username = '$username', apellido = '$apellido', fechanac = '$fechanac', telefono = '$telefono', password = '$editcontraseña', email = '$email' WHERE user_id = $elid";
 
 	if($connect->query($sql) === TRUE) {
 		$valid['success'] = true;
 		$valid['messages'] = "Actualizado correctamente";	
-		header("Location:../users.php?rol=1&id=$elid");
+		header("Location:../ajustes.php?rol=$editrol&id=$elid");
 
 	} else {
 		$valid['success'] = false;

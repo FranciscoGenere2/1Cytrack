@@ -6,7 +6,8 @@ $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST) {	
 
-
+$id = $_GET['id'];
+$rol = $_GET['rol'];
 $ufechanac 		= date('y/m/d');
 $uemail 		= $_POST['uemail'];
 
@@ -20,7 +21,7 @@ $urolUser 		=	$_GET['id'];
             if($connect->query($sql) === TRUE) {
                 $valid['success'] = true;
                 $valid['messages'] = "Successfully Added";	
-                header('location:fetchUser.php');
+                header('location:../notas.php?id='.$_GET['id'].'&rol='.$_GET['rol']);
 
             } else {
                 $valid['success'] = false;

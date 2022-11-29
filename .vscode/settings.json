@@ -1,0 +1,9 @@
+{
+    "liveServer.settings.port": 5501,
+    "githubPullRequests.remotes": [
+        "origin",
+        "upstream",
+        "https://github.com/FranciscoGenere2/1Cytrack.git",
+        "FranciscoGenere2/1Cytrack.git"
+    ]
+}

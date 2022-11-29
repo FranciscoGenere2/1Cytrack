@@ -20,7 +20,7 @@ $urolUser 		=	$_GET['id'];
             if($connect->query($sql) === TRUE) {
                 $valid['success'] = true;
                 $valid['messages'] = "Successfully Added";	
-                header('location:fetchUser.php');
+                header('location:../dashboard.php?id='.$_GET['id'].'&rol='.$_GET['rol']);
 
             } else {
                 $valid['success'] = false;

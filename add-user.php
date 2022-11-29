@@ -47,7 +47,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Nombre</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="unombre" id="unombre" class="form-control" placeholder="Nombre">
+                                            <input required type="text" name="unombre" id="unombre" class="form-control" placeholder="Nombre">
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Apellido</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="uapellido" id="uapellido" class="form-control" placeholder="Apellido">
+                                            <input required type="text" name="uapellido" id="uapellido" class="form-control" placeholder="Apellido">
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max='2013-12-31' class="form-control" placeholder="Fecha de nacimiento">
+                                            <input required type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max='2013-12-31' class="form-control" placeholder="Fecha de nacimiento">
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="uemail" id="uemail" class="form-control" placeholder="Email">
+                                            <input required type="email" name="uemail" id="uemail" class="form-control" placeholder="Email">
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Telefono</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="utelefono" id="utelefono" class="form-control" placeholder="Telefono">
+                                            <input required type="text" name="utelefono" id="utelefono" class="form-control" placeholder="Telefono">
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Contraseña</label>
                                         <div class="col-sm-9">
-                                            <input type="password" class="form-control" id="upassword" placeholder="Password" name="upassword">
+                                            <input required type="password" class="form-control" id="upassword" placeholder="Password" name="upassword">
                                         </div>
                                     </div>
                                 </div>

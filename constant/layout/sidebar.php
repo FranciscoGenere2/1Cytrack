@@ -1,6 +1,6 @@
  <?php
     require_once('./constant/connect.php');
-  
+    
 $rol=$_GET['rol'];
     ?>
 
@@ -14,13 +14,16 @@ $rol=$_GET['rol'];
              <ul id="sidebarnav">
                  <li class="nav-devider"></li>
                  <li class="nav-label">Menú</li>
-                 <li> <a href="dashboard.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-calendar"></i> Dashboard</a>
+                 <li> <a href="dashboard.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId'];?>" aria-expanded="false"><i class="fa fa-tachometer"></i> Dashboard</a>
                  </li>
-                 <li> <a href="calendario.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-calendar"></i> Calendario</a>
-                 <li> <a href="ciclos.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-circle-o"></i> Ciclos</a>
+                
+                 <!-- <li> <a href="ciclos.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-circle-o"></i> Ciclos</a> -->
                  <li> <a href="grafica.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-bar-chart"></i> Grafica</a>
                  <li> <a href="ajustes.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-wrench"></i> Ajustes</a>
                  <li> <a href="notas.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-pencil"></i> Notas</a>
+                 <li> <a href="pdf.php" aria-expanded="false"><i class="fa fa-file"></i> Reporte</a>
+
+        
 
 
 
@@ -66,7 +69,7 @@ $rol=$_GET['rol'];
                      </ul>
                  </li> -->
 
-                 <?php if ($_GET['rol']==1) /*  && ($_GET['estadocuenta']==1)  PROBAR ESTO PARA ESTADO DE CUENTA */  { ?>
+                 <?php if ($_GET['rol']==1) { ?>
                      <!-- <li><a href="#" href="#" aria-expanded="false"><i class="fa fa-print"></i><span class="hide-menu">Opcion</span></a></li> 
 
 
@@ -91,23 +94,24 @@ $rol=$_GET['rol'];
                      </ul>
                  </li>
                  <?php } ?>
-<!--boton paypal INICIO-->
-<div id="donate-button-container">
-<div id="donate-button"></div>
-<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-<script>
-PayPal.Donation.Button({
-env:'production',
-hosted_button_id:'SA45J4LRQ3GRG',
-image: {
-src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-alt:'Donate with PayPal button',
-title:'PayPal - The safer, easier way to pay online!',
-}
-}).render('#donate-button');
-</script>
-</div>
-                <!--boton paypal FIN-->
+                 <p>
+                    <div style="text-align: center;" id="donate-button-container">
+                    <div id="donate-button"></div>
+                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                    <script>
+                    PayPal.Donation.Button({
+                    env:'production',
+                    hosted_button_id:'SA45J4LRQ3GRG',
+                    image: {
+                    src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                    alt:'Dona con PayPal',
+                    title:'PayPal - ¡Dona a Cytrack!',
+                    }
+                    }).render('#donate-button');
+                    </script>
+                    </div>
+                </p>
+
              </ul>
          </nav>
 

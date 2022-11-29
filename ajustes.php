@@ -6,7 +6,7 @@
 
 <?php include('./constant/connect.php');
 
-//APARTIR DE AQUI HAGO LA CONSULTA DE LOS USUARIOS (solo para los placeholders)
+
 
 $sql = "SELECT * from users where  user_id='" . $_GET['id'] . "'"; 
 $result = $connect->query($sql)->fetch_assoc();  
@@ -41,7 +41,7 @@ $result = $connect->query($sql)->fetch_assoc();
                     <div class="card-body">
                         <div class="input-states">
                             
-                            <form class="form-horizontal" method="POST" id="submitUserForm" action="php_action/ajustes.php?idSelect=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" id="submitUserForm" action="php_action/upajustes.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId'];?>" enctype="multipart/form-data">
 
                                 <input type="hidden" name="currnt_date" class="form-control">
 
@@ -61,7 +61,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Apellido</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="apellido" value="<?php
+                                            <input type="text" name="editapellido" id="editapellido" class="form-control" value="<?php
                                             
                                             echo $result['apellido'];
                                                 ?>
@@ -74,7 +74,7 @@ $result = $connect->query($sql)->fetch_assoc();
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                         <div class="col-sm-9">
-                                            <input type="date" name="editfechanac" id="editfechanac" class="form-control" min='1900-01-01' max='2013-12-31' place="fecha de nacimiento "value= "<?php
+                                            <input required type="date" name="editfechanac" id="editfechanac" class="form-control" min='1900-01-01' max='2013-12-31' place="fecha de nacimiento "value= "<?php
                                             
                                             echo $result['fechanac'];
                                                 ?>
