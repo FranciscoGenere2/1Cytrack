@@ -1,3 +1,68 @@
+<?php include('./constant/layout/head.php'); ?>
+<?php include('./constant/layout/header.php'); ?>
+
+<?php include('./constant/layout/sidebar.php'); ?>
+
+<?php include('./constant/connect.php');
+//AQUI HAGO CONSULTA DE LA LISTA DE USUARIOS QUE SE MOSTRARAN EN LA PANTALLA DE USUARIOS
+$sql = "SELECT * FROM users";
+$result = $connect->query($sql);
+//echo $sql;exit;
+
+?>
+<div class="page-wrapper">
+
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-primary">Ver usuarios</h3>
+        </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Usuarios</a></li>
+                <li class="breadcrumb-item active">Ver usuarios</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <a href="add-user.php?rol=<?php echo $_GET['rol'];;?>&id=<?php  echo $_SESSION['userId']; ?>"><button class="btn btn-primary">Agregar un nuevo usuario</button></a>
+
+                <div class="table-responsive m-t-40">
+
+
+
+
+
+                <label for="myInput">Filtrar por nombre: </label>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="" title="Type in a name">
+                    <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTablex");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 
 
 
