@@ -41,7 +41,6 @@
 
 
 
-<!-- <label  id="resultadop">NOTA: Hay que pasar el array php al javascript, de momento solo captura el primer valor</label> -->
 
                 <!DOCTYPE html>
 
