@@ -47,7 +47,7 @@ $date = date('Y-m-d');
                     <div class="table-responsive m-t-40">
 
 
-                    <label for="myInput">Filtrar ultimo periodo: </label>
+                    <label for="myInput">Filtrar Último Periodo: </label>
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="" title="Type in a name">
                     <script>
 function myFunction() {
@@ -182,7 +182,7 @@ foreach($result as $row){
                             </div>
                             <div class="media-body media-text-right">
                             <a href="#">
-                                    <p class="m-b-0">Fase menstrual</p>
+                                    <p class="m-b-0">Fase Menstrual</p>
                                 </a>
                                 <h3 class="color-white"><?php 
                                 $fechacompleta =  htmlentities($row['ultimop']);
@@ -220,7 +220,7 @@ foreach($result as $row){
                             </div>
                             <div class="media-body media-text-right">
                             <a href="Order.php">
-                                    <p class="m-b-0">Fase post-menstrual</p>
+                                    <p class="m-b-0">Fase Post-Menstrual</p>
                                 </a>
                                 <h3 class="color-white"><?php
                                 $fechacompleta =  htmlentities($row['ultimop']);
