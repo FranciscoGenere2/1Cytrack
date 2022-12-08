@@ -21,7 +21,7 @@ $rol=$_GET['rol'];
                  <li> <a href="grafica.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-bar-chart"></i> Grafica</a>
                  <li> <a href="ajustes.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-wrench"></i> Ajustes</a>
                  <li> <a href="notas.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>" aria-expanded="false"><i class="fa fa-pencil"></i> Notas</a>
-                 <li> <a href="pdf.php" aria-expanded="false"><i class="fa fa-file"></i> Reporte</a>
+                 
 
         
 
@@ -70,6 +70,7 @@ $rol=$_GET['rol'];
                  </li> -->
 
                  <?php if ($_GET['rol']==1) { ?>
+                  <li> <a href="pdf.php" aria-expanded="false"><i class="fa fa-file"></i> Reporte</a>
                      <!-- <li><a href="#" href="#" aria-expanded="false"><i class="fa fa-print"></i><span class="hide-menu">Opcion</span></a></li> 
 
 
