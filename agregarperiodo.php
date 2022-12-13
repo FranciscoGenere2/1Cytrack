@@ -6,9 +6,10 @@
 
 <?php include('./constant/connect.php');
 
-$rol=$_GET['rol'];
+$idUsuario = $_SESSION['userId'];
+$idRol = $_SESSION['rol'];
 
-$sql = "SELECT * from users where  user_id='" . $_GET['id'] . "'";
+$sql = "SELECT * from users where  user_id='" . $idUsuario . "'";
 $result = $connect->query($sql)->fetch_assoc();  ?>
 
 <div class="page-wrapper">
@@ -48,7 +49,8 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Fecha de periodo</label>
                                         <div class="col-sm-9">
-                                            <input required type="date" name="ufechanac" id="ufechanac" min='1900-01-01' max="<?=date('Y-m-d');?>" class="form-control" placeholder="Fecha de nacimiento" required="">
+                                            <input required type="date" name="ufechanac" id="ufechanac" min='1900-01-01' 
+                                            max="<?=date('Y-m-d');?>" class="form-control" placeholder="Fecha de nacimiento" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +59,18 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Dias de periodo</label>
                                         <div class="col-sm-9">
-                                            <input required type="text" name="uemail" id="uemail" class="form-control"  required="">
+                                        <select name="uemail" id="uemail">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +79,20 @@ $result = $connect->query($sql)->fetch_assoc();  ?>
                                     <div class="row">
                                         <label class="col-sm-3 control-label">Dias de ciclo</label>
                                         <div class="col-sm-9">
-                                            <input required type="text" name="utelefono" id="utelefono" class="form-control" required="">
+                                           <!-- <input required type="text" name="utelefono" id="utelefono" class="form-control" required=""> -->
+                                            <select name="utelefono" id="utelefono">
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+  <option value="32">32</option>
+  <option value="33">33</option>
+  <option value="34">34</option>
+  <option value="35">35</option>
+</select>
                                         </div>
                                     </div>
                                 </div>

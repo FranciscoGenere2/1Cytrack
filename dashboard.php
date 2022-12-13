@@ -13,7 +13,8 @@ require("constant/connect.php");
 
 
 
-
+$idUsuario = $_SESSION['userId'];
+$idRol = $_SESSION['rol'];
 
 $date = date('Y-m-d');
 
@@ -33,7 +34,7 @@ $date = date('Y-m-d');
     
 <head>
 
-   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href='https://css.gg/drop.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,11 +44,11 @@ $date = date('Y-m-d');
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Tabla de datos</strong>
-                    <a href="agregarperiodo.php?rol=<?php echo $rol;?>&id=<?php  echo $_SESSION['userId']; ?>"><button class="btn btn-primary" >Añadir Período</button></a>
+                    <a href="agregarperiodo.php"><button class="btn btn-primary" >Añadir Período</button></a>
                     <div class="table-responsive m-t-40">
 
 
-                    <label for="myInput">Filtrar Último Periodo: </label>
+                    <label for="myInput">Filtrar ultimo periodo: </label>
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="" title="Type in a name">
                     <script>
 function myFunction() {
@@ -75,7 +76,7 @@ $sql = "SELECT * FROM tips ORDER BY RAND() LIMIT 1;";
 $result = $connect->query($sql);
 foreach($result as $row){
     ?><br> 
-    <h3 style="color: black">TIP!:  <?php
+    <h3 style="color: #570096;">TIP!:  <?php
     print $row["des_tip"]."\n";}
 ?></H3>
    
@@ -96,7 +97,7 @@ foreach($result as $row){
                             <tbody>
                                 <?php
                                 //include('./constant/connect');
-                               $variable = $_GET['id'];
+                               $variable = $_SESSION['userId'];
                                 $sql = "SELECT * FROM users WHERE user_id = $variable";
                                 $result1 = $connect->query($sql);
                                /* foreach ($result1 as $row1) {
@@ -110,7 +111,7 @@ foreach($result as $row){
                                 $result = $connect->query($sql);
                                 //print_r($result);exit;
                                 foreach ($result as $row) {
-                                    $roledit=$_GET['rol'];
+                                    $roledit=$idRol;
                                    
                                 ?>
                                     <tr>
@@ -182,7 +183,7 @@ foreach($result as $row){
                             </div>
                             <div class="media-body media-text-right">
                             <a href="#">
-                                    <p class="m-b-0">Fase Menstrual</p>
+                                    <p class="m-b-0">Fase menstrual</p>
                                 </a>
                                 <h3 class="color-white"><?php 
                                 $fechacompleta =  htmlentities($row['ultimop']);
@@ -191,14 +192,14 @@ foreach($result as $row){
                                 $diaspromedio =  htmlentities($row['duracionp']);
 
                                 if (ceil(($fechadia+$diaspromedio)) > 30){
-                                    $resultIniPost = 0;
+                                    $resultIniPost = ($fechadia-$diaspromedio)*-1;
                                     
                                     $finalovu1 = ceil($fechadia/($resultIniPost+$diaspromedio));
                                 echo 'Desde el dia', ' ', $fechadia, ' ', 'hasta el dia', ' ', ($finalovu1)-1;
                                     }
                                     else{
                                     
-                                        echo 'Desde el dia', ' ', ceil((($fechadia+$diaspromedio))), ' ', 'hasta el dia', ' ', ceil((($fechadia+$diaspromedio))+($diaspromedio/$diaspromedio));
+                                        echo 'Desde el dia', ' ', ceil((($fechadia))), ' ', 'hasta el dia', ' ', ceil((($fechadia+$diaspromedio)));
                                       
                                       }
 
@@ -220,7 +221,7 @@ foreach($result as $row){
                             </div>
                             <div class="media-body media-text-right">
                             <a href="Order.php">
-                                    <p class="m-b-0">Fase Post-Menstrual</p>
+                                    <p class="m-b-0">Fase post-menstrual</p>
                                 </a>
                                 <h3 class="color-white"><?php
                                 $fechacompleta =  htmlentities($row['ultimop']);
@@ -230,8 +231,8 @@ foreach($result as $row){
                                 $iniovu = htmlentities($row['duracionciclo']/$diaspromedio-1);
                                 $month = date('F');
                             
-                                if (ceil(($fechadia+$diaspromedio)) > 30){
-                                  $resultIniPost = 0;
+                                if (ceil(($fechadia+$diaspromedio)) >= 30){
+                                  $resultIniPost = ($fechadia-$diaspromedio)*-1;
                                   
                                   $finalovu1 = ceil($fechadia/($resultIniPost+$diaspromedio));
                                     echo 'Desde el dia', ' ', ceil((($resultIniPost+$diaspromedio)/$diaspromedio)), ' ', 'hasta el dia', ' ', $finalovu1 ;
@@ -271,7 +272,7 @@ foreach($result as $row){
                                 $fechacompleta2 = strtotime($fechacompleta);
                                 $fechadia =  idate('d', $fechacompleta2);
                                 $diaspromedio =  htmlentities($row['duracionp']);
-                                if (ceil($iniovu+(($fechadia+$diaspromedio))+1+5) > 30){
+                                if (ceil($iniovu+(($fechadia+$diaspromedio))+1+5) >= 30){
                                   $nouno=(($fechadia+$diaspromedio)/$fechadia+$diaspromedio);
                                   echo 'Desde el dia', ' ', ceil((((($fechadia+$diaspromedio)*$fechadia)/$diaspromedio-$nouno)/$diaspromedio)/$diaspromedio), ' ', 'hasta el dia', ' ', ceil((((($fechadia+$diaspromedio)*$fechadia)/$diaspromedio-$nouno)/$diaspromedio)/$diaspromedio)+5;
                                 
@@ -307,7 +308,7 @@ foreach($result as $row){
                                 </a>
 
                                 <h3 class="color-white"><?php
-                                if ((ceil($fechadia + 30)) > 30){
+                                if ((ceil($fechadia + 30)) >= 30){
                                     $fechareal = ($fechadia + 30)-30;
 
                                     $mes_siguiente = date('M', strtotime('+1 month'));
